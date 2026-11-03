@@ -1,6 +1,6 @@
 ---
 name: reativacao-black
-description: Use quando for reabordar, na Black, leads que já receberam proposta do Programa SMTM. Lê a transcrição da call de cada lead e entrega o resumo para o Iago e duas mensagens de WhatsApp (reconexão e oferta Black), personalizadas e conferidas.
+description: Use quando for reabordar, na Black, leads que já receberam proposta do Programa SMTM, ou quando o Iago colar a resposta de um lead à mensagem 1. Lê a transcrição da call de cada lead e entrega o resumo para o Iago e duas mensagens de WhatsApp (reconexão e oferta Black), prontas para copiar e conferidas.
 ---
 
 # Reativação Black: leads que já receberam proposta
@@ -9,7 +9,7 @@ Para cada lead que ouviu a proposta do Programa SMTM e não fechou, a skill entr
 
 1. **Resumo do lead:** quem é, o que queria, o que travou e o que foi oferecido, para o Iago não precisar reler a call.
 2. **Mensagem 1 (reconexão):** a meta que o lead contou na call e pelo menos três problemas dele, em bullets.
-3. **Mensagem 2 (oferta Black):** para enviar depois que ele responder. Liga cada problema ao que o programa faz, lista a condição de Black e sugere dia e horário com o Iago. Vai junto com o PDF da Condição Black.
+3. **Mensagem 2 (oferta Black):** para enviar depois que ele responder. Liga cada problema ao que o programa faz, lista a condição de Black e sugere dia e horário com o Iago. Vai junto com o PDF da Condição Black. Se o Iago colar a resposta do lead, a mensagem 2 é reescrita considerando essa resposta (seção "Com a resposta do lead").
 
 A proposta customizada não faz parte desta skill. Quem monta é o Iago.
 
@@ -56,7 +56,9 @@ No fim, gere `saida/_resumo.md` com uma tabela: lead, empresa, data da call, que
 
 ## Formato do arquivo de cada lead
 
-```
+Cada balão das mensagens vai num bloco de código próprio (três crases antes e depois). Assim o Iago copia o texto cru, com os asteriscos do negrito, e nada que não é mensagem fica junto. Tudo o que é instrução para o Iago fica fora dos blocos, numa seção separada.
+
+````
 # <Nome> · <Empresa>
 
 Call: <aplicação | sessão estratégica> em <DD/MM/AAAA> · apresentou: <nome> · transcrição: <caminho do arquivo preparado>
@@ -72,24 +74,39 @@ Status: <pronto | REVISAR ANTES DE ENVIAR: motivo>
 
 ## Mensagem 1 · reconexão
 
+```
 <balão 1>
+```
 
+```
 <balão 2, com os bullets>
+```
 
+```
 <balão 3>
+```
 
 ## Mensagem 2 · oferta Black (enviar depois da resposta do lead)
 
+```
 <balão 1>
+```
 
+```
 <balão 2>
+```
 
+```
 <balão 3, com a lista da condição>
+```
 
+```
 <balão 4: sugestão de dia e horário>
+```
 
-Enviar junto: PDF da Condição Black.
-Se o lead responder que o desafio já foi resolvido, não envie esta mensagem como está.
+## Antes de enviar a mensagem 2 (não copiar)
+- Mande o PDF da Condição Black junto com a mensagem 2.
+- Se quiser a mensagem 2 ajustada à resposta do lead, cole a resposta dele no chat.
 
 ## Base da mensagem (falas da call)
 - Meta: "<frase literal>" (<hh:mm:ss>, linha <n>) | não dita na call
@@ -101,15 +118,33 @@ Se o lead responder que o desafio já foi resolvido, não envie esta mensagem co
 
 ## Atenção
 - <lacunas, dúvidas, sinais de que não é para enviar. "Nada" se não houver>
-```
+````
 
 Um "Problema" a mais para cada bullet além do terceiro.
 
-## Formato dos balões (WhatsApp)
+## Formato das mensagens (WhatsApp)
 
+- **Sempre em bloco de código**, no arquivo e quando mostrar no chat. Fora do bloco, o chat transforma `*texto*` em itálico e o asterisco some na cópia.
+- **Dentro do bloco só vai o que é para enviar.** Instrução, aviso, "enviar junto", nome da seção: tudo fora do bloco.
 - Negrito com **um** asterisco de cada lado: `*texto*`. Nunca `**texto**`, que aparece no WhatsApp com asterisco sobrando.
 - Bullets com hífen e espaço no começo da linha: `- *texto*`.
-- Sem título, sem tabela, sem outro markdown.
+- Sem exagero: negrito só nos bullets. Sem emoji, sem título, sem tabela, sem outro markdown.
+
+## Com a resposta do lead
+
+Quando o Iago colar no chat a resposta de um lead à mensagem 1:
+
+1. Identifique o lead pelo nome. Leia o arquivo dele em `saida/` e, se precisar, a transcrição preparada. Se não houver arquivo, rode o fluxo normal para esse lead antes.
+2. Reescreva a mensagem 2 considerando a resposta:
+   - a abertura reage ao que ele respondeu, com as palavras dele;
+   - problema que ele confirmou ou trouxe de novo entra no "a gente resolve com", só com as entregas de `o-que-o-programa-resolve.md`;
+   - problema que ele disse que resolveu sai;
+   - o resto da estrutura não muda: lista da condição de Black e sugestão de dia e horário.
+3. Se a resposta disser que ele fechou com outra empresa, não quer mais contato ou resolveu tudo, não escreva a oferta: avise o Iago e pare.
+4. Acrescente ao arquivo do lead a seção `## Mensagem 2 · com a resposta do lead`, com a resposta dele citada fora dos blocos e a mensagem nova em blocos, e rode o conferidor.
+5. No chat, mostre a mensagem nova em blocos de código, um por balão, e, fora dos blocos, a lembrança do PDF.
+
+Sem resposta do lead, a mensagem 2 sai no padrão, escrita para o caso mais comum (os desafios continuam).
 
 ## O que nunca fazer
 

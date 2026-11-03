@@ -12,12 +12,12 @@ Tirado das mensagens reais que o Iago manda aos leads depois das calls.
 - Manda **vários balões curtos**, um assunto por balão, em vez de um bloco grande.
 - Trata com proximidade: "mestre" e "meu amigo" com homens, "minha amiga" com mulheres. Use no máximo uma vez por mensagem e só se combinar com o tom da call.
 - Escreve simples, como fala: "pra facilitar", "tranquilo", "te chamo", "conversamos".
-- Quase sem emoji. No máximo um (👊) no fim da mensagem 2, e só se o lead tiver esse tom.
+- Sem emoji nas mensagens.
 - Nada de "Prezado", "Espero que esteja bem", "Venho por meio desta".
 
 **O que NÃO copiar das mensagens antigas:** pressão, ironia com o lead que sumiu, ataque ao mercado ou à concorrência e "kkk".
 
-**Formato do WhatsApp:** negrito com um asterisco de cada lado (`*texto*`) e bullets com hífen (`- *texto*`). Nunca asterisco duplo.
+**Formato do WhatsApp:** a mensagem sai pronta para copiar e colar, cada balão num bloco de código (no arquivo e no chat), para o asterisco do negrito não sumir na cópia. Negrito com um asterisco de cada lado (`*texto*`), bullets com hífen (`- *texto*`), sem exagero: negrito só nos bullets. Nunca asterisco duplo. Dentro do bloco só vai o que é para enviar; instrução para o Iago ("mande o PDF") fica fora, numa seção separada, para não ser copiada por engano.
 
 ## Mensagem 1: reconexão
 
@@ -54,14 +54,14 @@ Se ele não disse meta, a mensagem abre com os desafios. Se não falou nada emoc
 
 Objetivo: marcar a conversa com o Iago.
 
-A mensagem é escrita para o caso mais comum, em que ele responde que os desafios continuam. Na saída, avise o Iago: se o lead disser que resolveu, a mensagem 2 não serve como está.
+Sem a resposta do lead, a mensagem é escrita para o caso mais comum, em que ele responde que os desafios continuam. Se o Iago colar a resposta do lead, a mensagem 2 é reescrita considerando essa resposta (ver "Com a resposta do lead", abaixo).
 
 **Estrutura** (a sequência que o Tiago definiu):
 1. **Abertura curta** que reage à resposta mais comum e diz **há quanto tempo foi a call**, pela data da call e a data de hoje: "Entendi, [nome]. Faz quase dois meses que a gente conversou."
 2. **Cada problema da mensagem 1 ligado ao que o programa faz**, em uma frase cada: "O [problema], a gente resolve com [entrega]." Só com as entregas de `o-que-o-programa-resolve.md`. Dois ou três problemas, no mesmo balão.
 3. **A condição de Black:** uma frase de entrada ("E consegui uma condição de Black pra você:") e a lista, em bullets e negrito, com os itens VALE de `oferta-black.md`, na ordem e com o texto de lá. A lista é a mesma dos cards do PDF.
 4. **Sugestão de dia e horário com o Iago:** "Podemos falar [dia] às [hora]?". Se apareceu sócio ou cônjuge na decisão, o convite inclui essa pessoa, pelo nome se ele tiver dito ("com você e com o [nome do sócio]", "com você e a sua esposa").
-5. Fora dos balões, a linha "Enviar junto: PDF da Condição Black."
+5. O PDF da Condição Black vai junto, mas a lembrança fica **fora dos blocos**, na seção "Antes de enviar a mensagem 2 (não copiar)". Nunca dentro da mensagem.
 
 **Regras:**
 - No máximo **170 palavras**.
@@ -71,6 +71,14 @@ A mensagem é escrita para o caso mais comum, em que ele responde que os desafio
 - **Sem crescimento médio de clientes** nem outro número sobre resultados da Metta enquanto não estiver como VALE em `oferta-black.md`.
 - **Sem prazo nem escassez** enquanto o prazo da mensagem não estiver definido em `oferta-black.md`. Nada de "últimas vagas" ou "só hoje".
 - Chame de **"programa"**, não de "mentoria" nem "consultoria".
+
+## Com a resposta do lead
+
+Quando o Iago colar a resposta do lead à mensagem 1, a mensagem 2 é reescrita com ela:
+- A abertura reage ao que ele disse, com as palavras dele: "Entendi, [nome]. As vendas grandes ainda caindo na sua mão, né?" (exemplo; use o que ele respondeu).
+- Problema que ele confirmou ou trouxe de novo entra no "a gente resolve com". Problema que ele disse que resolveu sai.
+- A lista da condição de Black e a sugestão de dia e horário continuam iguais.
+- Se ele disse que fechou com outra empresa, não quer contato ou resolveu tudo, não escreva a oferta: avise o Iago.
 
 ## Regras da Metta para qualquer mensagem
 

@@ -12,7 +12,9 @@ Para cada <lead>.md da pasta (menos os que começam com "_"):
   - formato do WhatsApp: *negrito* com um asterisco; asterisco duplo é erro;
   - nada de preço, percentual, prazo, urgência, palavra proibida ou travessão nos balões;
   - "mentoria"/"consultoria" fora das mensagens;
-  - mensagem 2 termina com a sugestão de horário e indica o PDF;
+  - cada balão num bloco de código (``` ... ```), sem instrução para o Iago dentro do bloco, sem emoji;
+  - mensagem 2 termina com a sugestão de horário; lembrança do PDF fora dos blocos;
+  - "Mensagem 2 · com a resposta do lead", se existir, passa pelas mesmas regras;
   - mensagem 1 usa pelo menos uma palavra das falas do lead (sinal de que não está genérica).
 
 Saída: um relatório por lead, com ERRO (corrigir antes de entregar) e AVISO (olhar).
@@ -66,8 +68,19 @@ def achar(secs, prefixo):
     return None
 
 
+EMOJI = re.compile("[\U0001F000-\U0001FAFF\u2600-\u27BF\uFE0F]")
+
+
+def blocos(txt: str):
+    """Conteúdo de cada bloco de código (um balão por bloco)."""
+    return [b.strip("\n") for b in re.findall(r"^```[^\n]*\n(.*?)^```\s*$", txt, re.M | re.S)]
+
+
 def baloes(txt: str):
-    linhas = [l for l in txt.split("\n") if not re.match(r"\s*(Se (ele|ela|o lead) responder|Enviar junto)", l)]
+    bs = blocos(txt)
+    if bs:
+        return "\n\n".join(bs).strip()
+    linhas = [l for l in txt.split("\n") if not re.match(r"\s*(Se (ele|ela|o lead) responder|Enviar junto|Resposta do lead)", l)]
     return "\n".join(linhas).strip()
 
 
@@ -125,17 +138,28 @@ def conferir_arquivo(p: Path):
         erros.append("não achei a transcrição indicada na linha 'Call:'")
 
     m1 = achar(secs, "mensagem 1")
-    m2 = achar(secs, "mensagem 2")
+    m2 = achar(secs, "mensagem 2 · oferta") or achar(secs, "mensagem 2")
+    m2r = achar(secs, "mensagem 2 · com a resposta")
     base = achar(secs, "base da mensagem") or ""
     status = re.search(r"Status:\s*(.+)", md)
     revisar = bool(status and "REVISAR" in status.group(1).upper())
 
-    for nome, txt, lim in (("mensagem 1", m1, LIMITE_M1), ("mensagem 2", m2, LIMITE_M2)):
+    checar = [("mensagem 1", m1, LIMITE_M1), ("mensagem 2", m2, LIMITE_M2)]
+    if m2r is not None:
+        checar.append(("mensagem 2 (com a resposta)", m2r, LIMITE_M2))
+    for nome, txt, lim in checar:
         if txt is None:
             if not revisar:
                 erros.append(f"{nome}: seção não encontrada")
             continue
+        if not blocos(txt):
+            erros.append(f"{nome}: os balões não estão em blocos de código: na cópia, o chat apaga os asteriscos e mistura instrução com mensagem")
+        for bl in blocos(txt):
+            if re.search(r"enviar junto|n[aã]o copiar|se o lead responder|cole a resposta|\bPDF\b", bl, re.I):
+                erros.append(f"{nome}: instrução para o Iago dentro do bloco da mensagem: \"{bl.strip()[:60]}\"")
         b = baloes(txt)
+        if EMOJI.search(b):
+            erros.append(f"{nome}: tem emoji")
         n = len(palavras(b))
         if n > lim:
             erros.append(f"{nome}: {n} palavras (limite {lim})")
@@ -154,7 +178,7 @@ def conferir_arquivo(p: Path):
         base_digitos = set(re.findall(r"\d+", re.sub(r"(?<=\d)[.,](?=\d)", "", base)))
         for num in re.findall(r"\d+(?:[.,]\d+)*", b):
             limpo = re.sub(r"[.,]", "", num)
-            if nome == "mensagem 2" and re.fullmatch(r"20(26|27)|5|2|1", limpo):
+            if nome.startswith("mensagem 2") and re.fullmatch(r"20(26|27)|5|2|1", limpo):
                 continue  # 2027, 5x2, NR-1, +2 meses: texto fixo da condição
             if limpo not in base_digitos:
                 (erros if nome == "mensagem 1" else avisos).append(
@@ -170,18 +194,19 @@ def conferir_arquivo(p: Path):
             avisos.append(f"{nome}: bullet sem negrito")
         if nome == "mensagem 1" and len(bullets) < 3 and not revisar:
             erros.append(f"mensagem 1: {len(bullets)} bullet(s); são pelo menos três problemas do lead")
-        if nome == "mensagem 2" and len(bullets) < 3 and not revisar:
+        if nome.startswith("mensagem 2") and len(bullets) < 3 and not revisar:
             avisos.append("mensagem 2: sem a lista da condição de Black em bullets")
         if b.count("!") > 1:
             avisos.append(f"{nome}: {b.count('!')} exclamações")
         if nome == "mensagem 1" and b.count("?") == 0:
             avisos.append("mensagem 1: não termina com pergunta")
-        if nome == "mensagem 2":
+        if nome.startswith("mensagem 2"):
             ultimo = [x for x in b.split("\n\n") if x.strip()][-1] if b.strip() else ""
             if "?" not in ultimo or not re.search(r"apresent|convers|mostrar|falar", norm(ultimo)):
                 avisos.append("mensagem 2: o último balão não é a sugestão de dia e horário")
-            if not re.search(r"Enviar junto:.*PDF", txt):
-                avisos.append("mensagem 2: falta a linha 'Enviar junto: PDF da Condição Black.'")
+            antes = achar(secs, "antes de enviar a mensagem 2") or ""
+            if nome == "mensagem 2" and "PDF" not in antes:
+                avisos.append("mensagem 2: falta a seção 'Antes de enviar a mensagem 2 (não copiar)' com a lembrança do PDF")
 
     resumo = achar(secs, "para o iago") or ""
     for item in re.findall(r"^-\s*(.+)$", resumo, re.M):

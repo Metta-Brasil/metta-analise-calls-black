@@ -94,6 +94,18 @@ O resultado fica em `trabalho/saida/`:
 - um arquivo por lead, com o resumo para o Iago, a mensagem 1, a mensagem 2 e as falas da call usadas como base;
 - `_resumo.md`, com a tabela de todos os leads e o status de cada um.
 
+Cada balão das mensagens vem num bloco de código, já com a formatação do WhatsApp (`*negrito*` e bullets). Copie só o que está dentro do bloco. As instruções, como mandar o PDF junto, ficam fora dos blocos.
+
+## Ajustar a mensagem 2 com a resposta do lead
+
+Quando o lead responder à mensagem 1, cole a resposta no Claude Code, na mesma pasta de trabalho:
+
+```
+Use a skill reativacao-black. Resposta do <nome do lead>: <cole aqui a resposta>
+```
+
+A skill reescreve a mensagem 2 considerando a resposta e acrescenta ao arquivo do lead. Sem a resposta, vale a mensagem 2 padrão.
+
 ## Antes de o Iago enviar
 
 - **Confira o WhatsApp e a Clint de cada lead.** A skill lê só a call. Se o lead fechou, recusou ou já foi reabordado depois dela, a mensagem não serve.
