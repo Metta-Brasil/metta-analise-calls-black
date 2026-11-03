@@ -7,8 +7,8 @@ Este repositório tem uma função só: analisar as calls de proposta do Program
 A skill lê a transcrição da call de cada lead que recebeu proposta e não fechou. Para cada um, ela entrega ao Iago:
 
 - um resumo do lead: quem é, o que queria, o que travou e o que foi oferecido;
-- a mensagem 1 de WhatsApp, de reconexão, que retoma o desafio que o lead contou na call;
-- a mensagem 2, com a condição da Black ligada ao problema dele e o convite para uma conversa.
+- a mensagem 1 de WhatsApp, de reconexão, com a meta que o lead contou na call e pelo menos três problemas dele, em bullets;
+- a mensagem 2, que liga cada problema ao que o programa faz, lista a condição de Black e sugere dia e horário com o Iago. Ela vai junto com o PDF da Condição Black.
 
 A skill só escreve. Quem envia é o Iago.
 
@@ -38,6 +38,7 @@ metta-analise-calls-black/
                 │   ├── leitura-da-call.md  → como ler a call e montar a ficha do lead
                 │   ├── mensagens.md        → voz do Iago, regras da mensagem 1 e da 2
                 │   ├── oferta-black.md     → condição da Black (só o que está VALE entra)
+                │   ├── o-que-o-programa-resolve.md → entregas do programa para ligar problema e solução
                 │   └── exemplos.md         → exemplo completo fictício, bom e ruim
                 └── scripts/
                     ├── preparar.py  → limpa e indexa as transcrições
@@ -52,7 +53,7 @@ São três camadas:
 
 ## Instalar (uma vez)
 
-O computador precisa ter Claude Code, git e Python 3.
+Quem roda a análise é o Iago, no próprio computador. O computador precisa ter o Claude Code (no terminal ou na aba Code do app Claude, numa sessão local), git e Python 3.
 
 No Claude Code, digite os dois comandos:
 
@@ -98,6 +99,7 @@ O resultado fica em `trabalho/saida/`:
 - **Confira o WhatsApp e a Clint de cada lead.** A skill lê só a call. Se o lead fechou, recusou ou já foi reabordado depois dela, a mensagem não serve.
 - **Status REVISAR:** leia o motivo antes de usar.
 - **A mensagem 2 só vai depois da resposta à mensagem 1.** Se o lead disser que o problema já foi resolvido, não mande a mensagem 2 como está.
+- **Mande o PDF da Condição Black junto com a mensagem 2.** Se o lead não abrir o PDF, a condição está na mensagem.
 
 ## Condição da Black
 

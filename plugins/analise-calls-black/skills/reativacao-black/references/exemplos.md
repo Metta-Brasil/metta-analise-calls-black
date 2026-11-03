@@ -1,73 +1,90 @@
 # Exemplo completo (fictício)
 
-Lead, empresa, falas e números deste exemplo são **inventados**. Ele mostra o padrão de leitura e de escrita: nada dele entra em mensagem. Os números de linha imitam o arquivo preparado pelo `preparar.py`.
+Lead, empresa, falas e números deste exemplo são **inventados**. Ele mostra o padrão de leitura e de escrita: nada dele entra em mensagem. Os números de linha imitam o arquivo preparado pelo `preparar.py`. A data de hoje, no exemplo, é 03/11/2026.
 
-Repare em três coisas: na transcrição, o lead aparece com o nome da empresa ("Acabamentos Exemplo"), e não com o nome dele; o valor "4060" é erro de reconhecimento (pelo contexto, R$ 40 a 60 mil por vendedor, porque a loja fatura R$ 600 mil); e a objeção não é preço.
+Repare em três coisas: na transcrição, o lead aparece com o nome da empresa ("Acabamentos Exemplo"), e não com o nome dele; o valor "4060" é erro de reconhecimento (pelo contexto, R$ 40 a 60 mil por vendedor, porque a loja fatura R$ 600 mil); e a proposta foi do Premium, por isso a construção do método entra na lista.
 
 ## A ficha (rascunho de trabalho, não vai para o arquivo)
 
 - Nome: Otávio. A sócia é a esposa, Lúcia, que cuida do financeiro e entra na call por alguns minutos.
-- Empresa e segmento: Acabamentos Exemplo, loja de pisos e revestimentos (varejo, com venda para construtoras).
+- Empresa e segmento: Acabamentos Exemplo, loja de pisos e revestimentos. B2C (consumidor final), com venda também para construtoras.
 - Time: "hoje são seis vendedores e eu" (00:05:40, linha 81).
-- Desafio: "toda venda grande, de obra, de construtora, acaba caindo na minha mão" (00:07:12, linha 104) e "se eu saio uma semana, a loja para de fechar as grandes" (linha 107).
-- Desejo: "eu queria sair do balcão e cuidar da empresa" (00:21:30, linha 352); meta: "pra gente ficar tranquilo seria uns 900 por mês" (00:24:05, linha 391).
-- Números: "eu vendo uns 300, o melhor vendedor faz 120 e o resto tá vendendo 4060" (00:15:48, linha 247); "hoje a loja fatura 600" (00:33:10, linha 520).
-- Proposta: Premium e Exclusivo, com os valores ditos na call (01:04:12, linhas 901 a 909).
+- Meta de resultado: "pra gente ficar tranquilo seria uns 900 por mês" (00:24:05, linha 391); hoje "a loja fatura 600" (00:33:10, linha 520).
+- Emocional: "eu tô cansado, faz três anos que não tiro férias" (00:09:20, linha 141).
+- Problemas:
+  1. "toda venda grande, de obra, de construtora, acaba caindo na minha mão" (00:07:12, linha 104);
+  2. "eu vendo uns 300, o melhor vendedor faz 120 e o resto tá vendendo 4060" (00:15:48, linha 247);
+  3. o cansaço da linha 141.
+- Plano apresentado: "o plano que eu te recomendo é o Premium" (01:04:12, linha 901), com os valores ditos na call.
 - Objeção: "já fiz curso de vendas com o time e em duas semanas voltou tudo como era" (00:58:31, linha 842). E não decide sozinho: "essas coisas eu e a Lúcia decidimos junto, a gente vai sentar e ver" (01:06:47, linha 931).
-- Combinado: retorno na quinta, depois das 14h (01:08:02, linha 955); o Iago ficou de mandar a proposta por escrito.
-- Quem apresentou: Iago.
+- Combinado: retorno na quinta, depois das 14h (01:08:02, linha 955).
+- Quem apresentou: Iago. Data da call: 15/09/2026 (quase dois meses antes de hoje).
 
 ## O arquivo final
 
 ```
 # Otávio · Acabamentos Exemplo
 
-Call: aplicação em 15/09/2026 · apresentou: Iago · transcrição: <pasta>/_preparo/Otávio__2026-09-15.txt
+Call: aplicação em 15/09/2026 · apresentou: Iago · transcrição: <pasta>/_preparo/Otavio__2026-09-15.txt
 Status: pronto
 
 ## Para o Iago
-- Quem é: sócio da Acabamentos Exemplo (pisos e revestimentos, varejo e construtoras), com a esposa, Lúcia, no financeiro. Seis vendedores.
-- O que ele queria: sair do balcão e chegar a R$ 900 mil por mês (hoje a loja fatura R$ 600 mil).
+- Quem é: sócio da Acabamentos Exemplo (pisos e revestimentos, B2C e construtoras), com a esposa, Lúcia, no financeiro. Seis vendedores.
+- O que ele queria: chegar a R$ 900 mil por mês (hoje a loja fatura R$ 600 mil) e conseguir tirar férias.
 - O que trava: toda venda grande passa por ele. Ele vende R$ 300 mil, o melhor vendedor R$ 120 mil e o resto do time R$ 40 a 60 mil cada.
 - Por que não fechou: já fez curso de vendas com o time e "em duas semanas voltou tudo como era". Decide junto com a Lúcia.
-- Proposta apresentada: Premium (12x R$ <valor dito na call>) e Exclusivo (12x R$ <valor dito na call>).
-- Combinado no fim da call: retorno na quinta seguinte, depois das 14h, com a proposta por escrito.
+- Proposta apresentada: Premium (12x R$ <valor dito na call>).
+- Combinado no fim da call: retorno na quinta seguinte, depois das 14h.
 
 ## Mensagem 1 · reconexão
 
 Fala, Otávio, tudo bem?
 
-Lembrei da nossa conversa. Você me contou que toda venda grande, de obra e de construtora, ainda caía na sua mão.
+Da última vez que a gente conversou, você queria levar a loja a R$ 900 mil por mês, mas para chegar lá tinha alguns desafios:
 
-Como está isso hoje?
+- *toda venda grande, de obra e construtora, caindo na sua mão*
+- *a maior parte do time vendendo bem abaixo do melhor vendedor*
+- *três anos sem conseguir tirar férias*
+
+Como estão essas coisas aí hoje?
 
 ## Mensagem 2 · oferta Black (enviar depois da resposta do lead)
 
-Otávio, isso a gente resolve. O seu jeito de fechar as vendas grandes vira o método da loja, e o time aprende a vender por ele.
+Entendi, Otávio. Faz quase dois meses que a gente conversou.
 
-E é a melhor época: na Black, fica mais em conta do que a proposta que te apresentei, com pagamento facilitado, e o fim de ano entra de bônus.
+As vendas grandes, a gente resolve com o método: o seu jeito de fechar vira o método da loja, e o time aprende a vender por ele. A distância para o melhor vendedor, com treinamento ao vivo do time todo mês e a formação do seu gestor.
 
-Hoje a maioria do time vende R$ 40 a 60 mil por mês. Se um deles dobrar em dezembro, só essa diferença já passa a parcela do programa.
+E consegui uma condição de Black pra você:
 
-Queria apresentar pra você e pra Lúcia. Pode ser [dia] às [hora] ou [dia] às [hora]?
+- *Condição muito mais barata* do que a que eu te passei
+- *+2 meses de programa*: o fim de ano é por nossa conta
+- *Benefícios sazonais*: Black Friday, Natal e vendas de fim de ano
+- *Masterclass de planejamento estratégico 2027*, em janeiro, para bater meta mesmo com a escala 5x2, a NR-1 e a inflação
+- *Construção do seu método comercial*, com o construtor da Metta
+- *Kit de livros*, conforme estoque
 
+Podemos falar com você e com a Lúcia [dia] às [hora]?
+
+Enviar junto: PDF da Condição Black.
 Se o lead responder que o desafio já foi resolvido, não envie esta mensagem como está.
 
 ## Base da mensagem (falas da call)
-- Desafio: "toda venda grande, de obra, de construtora, acaba caindo na minha mão" (00:07:12, linha 104)
-- Desejo: "eu queria sair do balcão e cuidar da empresa" (00:21:30, linha 352)
+- Meta: "pra gente ficar tranquilo seria uns 900 por mês" (00:24:05, linha 391)
+- Problema 1: "toda venda grande, de obra, de construtora, acaba caindo na minha mão" (00:07:12, linha 104)
+- Problema 2: "eu vendo uns 300, o melhor vendedor faz 120 e o resto tá vendendo 4060" (00:15:48, linha 247)
+- Problema 3: "eu tô cansado, faz três anos que não tiro férias" (00:09:20, linha 141)
 - Objeção: "já fiz curso de vendas com o time e em duas semanas voltou tudo como era" (00:58:31, linha 842)
-- Números usados: "eu vendo uns 300, o melhor vendedor faz 120 e o resto tá vendendo 4060" (00:15:48, linha 247)
+- Plano apresentado: "o plano que eu te recomendo é o Premium" (01:04:12, linha 901)
 
 ## Atenção
-- "4060" na transcrição foi lido como R$ 40 a 60 mil por vendedor, pelo contexto (a loja fatura R$ 600 mil). Confirme antes de enviar a mensagem 2.
-- A Lúcia decide junto: vale chamar os dois para a conversa.
+- "4060" na transcrição foi lido como R$ 40 a 60 mil por vendedor, pelo contexto (a loja fatura R$ 600 mil).
+- A Lúcia decide junto: o convite inclui os dois.
 ```
 
 ## Por que essas mensagens funcionam
 
-- **Mensagem 1:** só serve para o Otávio. Ela usa a fala dele (toda venda grande caindo na mão dele) e pergunta pelo problema ("como está isso hoje?"), não por ele. Não fala de oferta.
-- **Mensagem 2:** o "temos como resolver" responde à objeção dele (o curso que não ficou): o método é o da loja, feito do jeito de vender que já funciona lá. O núcleo da Black vem em uma frase. O "já paga" usa os números dele, em condicional, comparando a diferença de um mês com a parcela. O convite inclui a Lúcia, porque ele não decide sozinho. Não tem preço nem prazo.
+- **Mensagem 1:** a abertura usa a meta dele, com o número que ele disse. Os três bullets são dele: um desafio de operação (as vendas grandes), um do time (a distância para o melhor vendedor) e um emocional (as férias). Nenhum culpa o dono. Não fala de oferta.
+- **Mensagem 2:** diz há quanto tempo foi a call e liga cada problema a uma entrega do programa. O método responde também à objeção dele (o curso que não ficou): é o jeito de vender da loja, não um conteúdo pronto. A lista é a dos itens VALE, na ordem do arquivo da oferta. O convite inclui a Lúcia. Não tem preço, percentual nem prazo.
 
 ## As mesmas mensagens, mal escritas
 
@@ -81,12 +98,12 @@ Serve para qualquer lead, cobra uma decisão que ele já adiou e não dá motivo
 
 Soa como acusação ("ainda está centralizando") e aponta para ele, não para o sistema.
 
-**Mensagem 2 em formato de anúncio:**
-> Otávio, temos uma condição IMPERDÍVEL de Black Friday! Desconto especial, contrato estendido, masterclass, kit de livros e método comercial. Só até sexta! Vamos fechar?
+**Mensagem 2 com solução genérica e urgência:**
+> Otávio, a gente resolve tudo isso com o nosso método! Condição IMPERDÍVEL de Black, só até sexta. Vamos fechar?
 
-Despeja benefícios (inclusive itens ainda não confirmados), inventa prazo, ignora a objeção dele e pede o fechamento por WhatsApp em vez de marcar a conversa.
+Não liga cada problema a uma entrega, inventa prazo e pede o fechamento por WhatsApp em vez de marcar a conversa.
 
-**"Já paga" inventado:**
-> Só com esse fim de ano você já paga o programa inteiro.
+**Mensagem 2 com número sem fonte:**
+> Nossos clientes crescem de 20 a 25% em média. Com a gente, você chega nos R$ 900 mil.
 
-Promessa sem conta. Com os números dele, a frase honesta compara a diferença de um mês com a parcela, em condicional.
+Número sem fonte e promessa de resultado.

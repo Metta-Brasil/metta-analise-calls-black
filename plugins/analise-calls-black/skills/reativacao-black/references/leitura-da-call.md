@@ -20,8 +20,8 @@ As calls de aplicação ("Mentoria Supere a Meta Todos os Meses") e de sessão e
 |---|---|
 | Como chamar o lead (nome, apelido) | Abertura: como o closer o chama |
 | Empresa, segmento, tamanho do time | Primeiros 15 minutos: o lead conta a empresa |
-| Desafio e dor, nas palavras dele | Contexto do lead e perguntas de diagnóstico (minuto 5 a 35). Perguntas típicas: distância entre o melhor e o pior vendedor, se o time defende preço, se as vendas acontecem sem o dono, impacto na família e na tranquilidade |
-| Desejo (meta de TER e de SER) | Pergunta "qual a sua meta de TER e de SER", "o que você quer mudar" |
+| Problemas e dor, nas palavras dele | Contexto do lead e perguntas de diagnóstico (minuto 5 a 35). Perguntas típicas: distância entre o melhor e o pior vendedor, se o time defende preço, se as vendas acontecem sem o dono, impacto na família e na tranquilidade |
+| Meta de resultado e desejo (meta de TER e de SER) | Pergunta "qual a sua meta de TER e de SER", "o que você quer mudar" |
 | Números dele (vendedores, quanto vende o melhor e o pior, faturamento, meta) | Mapa de oportunidade, por volta do minuto 30 |
 | Proposta: plano e valores | Fim da call (minuto 50 a 75): "12x de ...", Premium, Exclusivo |
 | Objeção e por que não fechou | Negociação e fechamento: sócio, cônjuge, orçamento, momento, comparar com outra empresa |
@@ -33,20 +33,31 @@ Antes de escrever qualquer mensagem, monte a ficha. Toda informação leva o min
 
 1. **Nome:** como o closer o chamou na call e o nome completo, se aparecer.
 2. **Empresa e segmento.**
-3. **Time:** quantos vendedores, se tem gerente, quem gerencia. Registre a composição como ele disse ("4 vendedores e eu"), sem arredondar.
-4. **Desafio principal:** a dor que ele mesmo trouxe, com a frase literal. Prefira a que ele repetiu ou a que veio com emoção ("tô cansado", "trabalho no escuro"). Não use a dor que o closer sugeriu e ele só confirmou com "é".
-5. **Desejo:** onde ele quer chegar, com a frase literal.
-6. **Números dele**, se ditos: faturamento, meta, quanto vende o melhor e o pior vendedor.
-7. **Proposta apresentada:** plano (Premium, Exclusivo, Elite) e valores ditos, inclusive o valor com desconto.
-8. **Objeção / por que não fechou:** com a frase literal. Tipos: preço/orçamento/caixa, momento ("agora não", correria, fim de ano), decisor (sócio, cônjuge, pai, financeiro), confiança (já se frustrou com mentoria ou consultoria), comparação com concorrente, outra prioridade.
-9. **Combinado no fim:** retorno marcado, o que ficou de mandar, com quem ele ia conversar.
-10. **Quem apresentou:** está no índice do `preparar.py` (`apresentou`). Confira na transcrição: é a pessoa da Metta com mais fala. Não confunda com convidados do topo (Silvio, Kárita), que muitas vezes nem falam.
-11. **Nome da empresa:** se não for dito na call, olhe `emails_convidados` no índice. O domínio do e-mail do lead costuma ser o site da empresa (fulano@nomedaempresa.com.br → Nome da Empresa). Use como pista e marque "pelo e-mail do convite" no resumo. Gmail, Hotmail, Outlook e afins não dizem nada. Nome que veio só do e-mail não entra nas mensagens: a grafia pode estar errada.
+3. **B2B ou B2C:** se vende para empresas ou para o consumidor final (ou os dois). Muda o item de benefícios sazonais na mensagem 2.
+4. **Time:** quantos vendedores, se tem gerente, quem gerencia. Registre a composição como ele disse ("4 vendedores e eu"), sem arredondar.
+5. **Meta de resultado:** o número que ele quer alcançar (faturamento, conversão, ticket), com a frase literal. É a primeira preferência para abrir a mensagem 1. Se não disse número, registre "não dita na call".
+6. **Falas emocionais:** cansaço, estresse, não conseguir tirar férias, a família, "trabalho no escuro". Frase literal.
+7. **Problemas (pelo menos três):** cada um com a frase literal e a linha. Prefira o que ele repetiu ou disse com emoção. Não use a dor que o closer sugeriu e ele só confirmou com "é". Problemas que costumam aparecer:
+   - distância de performance entre o melhor vendedor e o resto;
+   - dependência do dono ou de um vendedor (toda venda grande passa por ele);
+   - cada um vende do seu jeito, processo que não está escrito, time que não segue o script;
+   - gestor que cobra e não ensina, ou que é bom no operacional e não desenvolve o time;
+   - resultado que oscila, meta decidida nos últimos dias;
+   - contratação difícil e turnover;
+   - desconto, preço, ticket, margem.
+   Se a call tiver menos de três problemas claros, registre os que existem e avise em "Atenção". Nunca complete com problema que ele não disse.
+8. **Desejo:** onde ele quer chegar além do número (sair da operação, ter previsibilidade), com a frase literal.
+9. **Números dele**, se ditos: faturamento, meta, quanto vende o melhor e o pior vendedor.
+10. **Proposta apresentada:** plano (Premium, Exclusive, Elite) e valores ditos, inclusive o valor com desconto. O plano decide se a construção do método entra na lista da mensagem 2.
+11. **Objeção / por que não fechou:** com a frase literal. Tipos: preço/orçamento/caixa, momento ("agora não", correria, fim de ano), decisor (sócio, cônjuge, pai, financeiro), confiança (já se frustrou com mentoria ou consultoria), comparação com concorrente, outra prioridade.
+12. **Combinado no fim:** retorno marcado, o que ficou de mandar, com quem ele ia conversar.
+13. **Quem apresentou:** está no índice do `preparar.py` (`apresentou`). Confira na transcrição: é a pessoa da Metta com mais fala. Não confunda com convidados do topo (Silvio, Kárita), que muitas vezes nem falam.
+14. **Nome da empresa:** se não for dito na call, olhe `emails_convidados` no índice. O domínio do e-mail do lead costuma ser o site da empresa (fulano@nomedaempresa.com.br → Nome da Empresa). Use como pista e marque "pelo e-mail do convite" no resumo. Gmail, Hotmail, Outlook e afins não dizem nada. Nome que veio só do e-mail não entra nas mensagens: a grafia pode estar errada.
 
 ## Sinais de que não é para mandar mensagem (ou de revisar antes)
 
 - Call com menos de 15 minutos, sem proposta: no-show, reagendamento ou conversa interna.
-- A call não chegou à proposta (o preço não foi apresentado: acabou o tempo, ficou para uma segunda reunião). Pode existir uma call seguinte que não está na pasta. Escreva as mensagens, mas a mensagem 2 não pode dizer "mais em conta do que a proposta que te apresentei": troque por "condição especial de Black".
+- A call não chegou à proposta (o preço não foi apresentado: acabou o tempo, ficou para uma segunda reunião). Pode existir uma call seguinte que não está na pasta. Escreva as mensagens, mas na lista da mensagem 2 o primeiro item não pode comparar com a proposta: use "*Condição especial de Black* no investimento".
 - O lead fechou na call ou depois (pagou sinal, assinou, falou em data de início).
 - O lead disse que contratou outra empresa ou que não quer mais contato.
 - Quem estava na call não era o dono (gerente, funcionário).

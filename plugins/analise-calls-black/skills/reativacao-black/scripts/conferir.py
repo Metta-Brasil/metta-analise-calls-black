@@ -6,9 +6,13 @@ Uso:
 
 Para cada <lead>.md da pasta (menos os que começam com "_"):
   - as falas citadas em "Base da mensagem" existem na transcrição, perto da linha indicada;
-  - tamanho das mensagens (mensagem 1 até 45 palavras, mensagem 2 até 100);
-  - nada de preço, percentual, prazo, urgência, palavra proibida, travessão ou markdown nos balões;
-  - "mentoria"/"consultoria" e clientes proibidos fora das mensagens;
+  - tamanho das mensagens (mensagem 1 até 70 palavras, mensagem 2 até 170; limites provisórios);
+  - mensagem 1 com pelo menos três bullets e três "Problema" citados na base;
+  - número na mensagem 1 só se estiver nas falas citadas (a meta do lead);
+  - formato do WhatsApp: *negrito* com um asterisco; asterisco duplo é erro;
+  - nada de preço, percentual, prazo, urgência, palavra proibida ou travessão nos balões;
+  - "mentoria"/"consultoria" fora das mensagens;
+  - mensagem 2 termina com a sugestão de horário e indica o PDF;
   - mensagem 1 usa pelo menos uma palavra das falas do lead (sinal de que não está genérica).
 
 Saída: um relatório por lead, com ERRO (corrigir antes de entregar) e AVISO (olhar).
@@ -19,8 +23,9 @@ import sys
 import unicodedata
 from pathlib import Path
 
-LIMITE_M1 = 45
-LIMITE_M2 = 100
+# Limites provisórios: revisar depois do reteste com o formato novo (meta + bullets + lista da Black).
+LIMITE_M1 = 70
+LIMITE_M2 = 170
 
 PROIBIDAS = [
     "alavancar", "alavanque", "potencializar", "potencialize", "framework", "destrave seu potencial",
@@ -62,7 +67,7 @@ def achar(secs, prefixo):
 
 
 def baloes(txt: str):
-    linhas = [l for l in txt.split("\n") if not re.match(r"\s*Se (ele|ela|o lead) responder", l)]
+    linhas = [l for l in txt.split("\n") if not re.match(r"\s*(Se (ele|ela|o lead) responder|Enviar junto)", l)]
     return "\n".join(linhas).strip()
 
 
@@ -143,25 +148,40 @@ def conferir_arquivo(p: Path):
                 erros.append(f"{nome}: urgência '{w}'")
         if re.search(r"\bmentoria\b|\bconsultoria\b", nb):
             erros.append(f"{nome}: usa 'mentoria' ou 'consultoria' (o produto é 'programa')")
-        if re.search(r"R\$\s*\d|\d+\s*%|\b\d+\s*x\b|\bparcelas? de\b|\b12 vezes\b", b, re.I):
-            achados = re.findall(r"R\$\s*[\d.,]+(?:\s*mil)?|\d+\s*%|\b\d+\s*x\b", b, re.I)
-            # número do próprio lead é permitido na mensagem 2 (regra do "já paga"); preço não
-            if nome == "mensagem 1":
-                erros.append(f"{nome}: tem número/valor {achados}: mensagem 1 não fala de número")
-            else:
-                avisos.append(f"{nome}: tem valor {achados}: confirme que é número do lead dito na call, nunca preço, parcela ou desconto")
+        if re.search(r"\d+\s*%|\b\d+\s*x\b|\bparcelas? de\b|\b12 vezes\b", b, re.I):
+            achados = re.findall(r"\d+\s*%|\b\d+\s*x\b|\bparcelas? de\b|\b12 vezes\b", b, re.I)
+            erros.append(f"{nome}: tem percentual ou parcela {achados}: preço e desconto ficam para a conversa")
+        base_digitos = set(re.findall(r"\d+", re.sub(r"(?<=\d)[.,](?=\d)", "", base)))
+        for num in re.findall(r"\d+(?:[.,]\d+)*", b):
+            limpo = re.sub(r"[.,]", "", num)
+            if nome == "mensagem 2" and re.fullmatch(r"20(26|27)|5|2|1", limpo):
+                continue  # 2027, 5x2, NR-1, +2 meses: texto fixo da condição
+            if limpo not in base_digitos:
+                (erros if nome == "mensagem 1" else avisos).append(
+                    f"{nome}: o número '{num}' não aparece nas falas citadas em 'Base da mensagem': só número dito pelo lead")
         if "—" in b or "–" in b:
             erros.append(f"{nome}: tem travessão")
-        if re.search(r"\*\*|^\s*[-•]\s", b, re.M):
-            erros.append(f"{nome}: tem markdown ou marcador de lista no balão")
+        if "**" in b:
+            erros.append(f"{nome}: asterisco duplo: no WhatsApp o negrito é *texto*, com um asterisco")
+        if re.search(r"^\s*#|^\s*\|", b, re.M):
+            erros.append(f"{nome}: tem título ou tabela de markdown no balão")
+        bullets = re.findall(r"^\s*[-•]\s+(.+)$", b, re.M)
+        if any("*" not in x for x in bullets):
+            avisos.append(f"{nome}: bullet sem negrito")
+        if nome == "mensagem 1" and len(bullets) < 3 and not revisar:
+            erros.append(f"mensagem 1: {len(bullets)} bullet(s); são pelo menos três problemas do lead")
+        if nome == "mensagem 2" and len(bullets) < 3 and not revisar:
+            avisos.append("mensagem 2: sem a lista da condição de Black em bullets")
         if b.count("!") > 1:
             avisos.append(f"{nome}: {b.count('!')} exclamações")
         if nome == "mensagem 1" and b.count("?") == 0:
             avisos.append("mensagem 1: não termina com pergunta")
         if nome == "mensagem 2":
             ultimo = [x for x in b.split("\n\n") if x.strip()][-1] if b.strip() else ""
-            if "?" not in ultimo or not re.search(r"apresent|convers|mostrar", norm(ultimo)):
-                avisos.append("mensagem 2: o último balão não é o convite (pedido de conversa + horário)")
+            if "?" not in ultimo or not re.search(r"apresent|convers|mostrar|falar", norm(ultimo)):
+                avisos.append("mensagem 2: o último balão não é a sugestão de dia e horário")
+            if not re.search(r"Enviar junto:.*PDF", txt):
+                avisos.append("mensagem 2: falta a linha 'Enviar junto: PDF da Condição Black.'")
 
     resumo = achar(secs, "para o iago") or ""
     for item in re.findall(r"^-\s*(.+)$", resumo, re.M):
@@ -172,6 +192,9 @@ def conferir_arquivo(p: Path):
     cits = re.findall(r'^-\s*([^:\n]+):\s*"(.+?)"\s*\(([\d:]+)?[^)]*?linha\s*(\d+)\)', base, re.M)
     if not cits and not revisar:
         erros.append("base da mensagem: nenhuma fala citada com linha")
+    n_prob = sum(1 for r, *_ in cits if r.strip().lower().startswith("problema"))
+    if n_prob < 3 and not revisar:
+        erros.append(f"base da mensagem: {n_prob} 'Problema' citado(s) com linha; são pelo menos três")
     if transc:
         for rotulo, cit, _ts, ln in cits:
             prob, _ = conferir_citacao(cit, int(ln), transc)

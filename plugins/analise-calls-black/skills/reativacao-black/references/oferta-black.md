@@ -2,32 +2,39 @@
 
 **Edite este arquivo antes de rodar.** A skill só usa nas mensagens o que estiver com status **VALE**.
 
-- **VALE:** pode entrar na mensagem, do jeito escrito em "Como dizer".
+- **VALE:** entra na lista da mensagem 2, do jeito escrito em "Como dizer".
 - **CONFIRMAR:** não entra na mensagem enquanto alguém não trocar para VALE.
 - **NUNCA:** não entra em mensagem nenhuma.
 
-Origem: briefing da campanha Black (Raquel, item 3.2) e explicação do Tiago sobre a skill.
+Origem: briefing da campanha Black e reunião de vendas com o Tiago em 03/11/2026 (estrutura da mensagem 2 e dos cards do PDF).
+
+## Lista da mensagem 2
+
+Os itens VALE entram em bullets e negrito, nesta ordem. É a mesma lista dos cards do PDF da Condição Black.
 
 | # | Item | Como dizer na mensagem | Status | Observação |
 |---|---|---|---|---|
-| 1 | Pagamento facilitado | "forma de pagamento facilitada" | VALE | Dito pelo Tiago. Não citar parcela nem número. |
-| 2 | Valor abaixo da proposta anterior | "mais em conta do que a proposta que te apresentei" | VALE | Dito pelo Tiago. Sem percentual na mensagem. |
-| 2a | Percentual de desconto sobre a proposta anterior | (definir) | CONFIRMAR | Sujeito à formalização. |
-| 3 | Fim de ano de bônus para acelerar o resultado agora | "você começa agora e o fim de ano entra de bônus, para acelerar o resultado já" | VALE | Palavras do Tiago ("extensão que esse final de ano a gente vai te dar"). |
-| 3a | Contrato mais longo que os 12 meses usuais | (definir) | CONFIRMAR | Possibilidade no briefing. Confirmar a duração e se é a mesma "extensão" que o Tiago descreveu. |
-| 4 | Benefícios sazonais de Black Friday, Natal e vendas de fim de ano | (definir o que é) | CONFIRMAR | O briefing não diz o que são esses benefícios. Descrever antes de liberar. |
-| 5 | Masterclass coletiva de planejamento estratégico para 2027 | "uma masterclass de planejamento estratégico de 2027, em janeiro" | VALE | Briefing. |
-| 6 | Construção do método comercial da empresa com o construtor interno | "a construção do método comercial da sua empresa" | VALE | Briefing. Não prometer prazo nem que a Metta faz tudo sozinha. |
-| 7 | Kits de livros | "kit de livros" | CONFIRMAR | Depende de estoque. |
+| 1 | Condição mais barata que a proposta anterior | "- *Condição muito mais barata* do que a que eu te passei" | VALE | Fala do Tiago. Sem número nem percentual. Se a call não chegou à proposta: "- *Condição especial de Black* no investimento". |
+| 2 | +2 meses de programa | "- *+2 meses de programa*: o fim de ano é por nossa conta" | VALE | Fala do Tiago ("você ganhar dois meses a mais"; "o fim de ano é por nossa conta"). |
+| 3 | Benefícios sazonais | "- *Benefícios sazonais*: Black Friday, Natal e vendas de fim de ano" | VALE | Texto do briefing. A definir: o que são, em uma frase, e a versão para empresa B2B (o Tiago pediu versões diferentes para B2B e B2C). Lead B2B: avisar em "Atenção". |
+| 4 | Masterclass de planejamento estratégico 2027 | "- *Masterclass de planejamento estratégico 2027*, em janeiro, para bater meta mesmo com a escala 5x2, a NR-1 e a inflação" | VALE | Fala do Tiago. Coletiva. |
+| 5 | Construção do método comercial | "- *Construção do seu método comercial*, com o construtor da Metta" | VALE só se a proposta foi do Premium | No Exclusive e no Elite, o método construído já faz parte do plano: não listar. Plano não dito na call: listar e avisar em "Atenção". |
+| 6 | Kit de livros | "- *Kit de livros*, conforme estoque" | VALE | Briefing: depende de estoque. |
+| 7 | Pagamento facilitado | (não usar) | CONFIRMAR | Saiu da estrutura que o Tiago definiu para a mensagem 2 e contradiz o briefing. |
+| 8 | Crescimento médio dos clientes | (não usar) | CONFIRMAR | Citado como exemplo na reunião, sem fonte. Só entra com base e período. |
 
 ## Prazo da condição
 
-Prazo final: **(não definido)**
+Prazo: **7 dias, definido para o PDF.** Na mensagem: **(não definido)**.
 
-Enquanto estiver "não definido", a mensagem não fala em prazo, data-limite nem "só até". Urgência inventada é proibida.
+Enquanto o prazo da mensagem estiver "não definido", ela não fala em prazo, data-limite nem "só até". Urgência inventada é proibida.
 
 ## Horários para sugerir na mensagem 2
 
 Horários livres do Iago: **(não definidos)**
 
-Se estiverem preenchidos (ex.: "terça 10h; quarta 15h; quinta 11h"), a mensagem 2 oferece **duas opções**. Se não, use `[dia] às [hora] ou [dia] às [hora]` para o Iago completar.
+Se estiverem preenchidos (ex.: "terça 10h; quarta 15h"), a mensagem 2 sugere um deles. Se não, use `[dia] às [hora]` para o Iago completar.
+
+## PDF
+
+A mensagem 2 vai junto com o PDF da Condição Black. O arquivo de saída traz a linha "Enviar junto: PDF da Condição Black."
