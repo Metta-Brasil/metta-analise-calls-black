@@ -1,13 +1,13 @@
 {
-  "name": "metta-brasil",
+  "name": "metta-black",
   "description": "Análise de calls para a Black (Metta)",
   "owner": {
     "name": "Metta Brasil"
   },
   "plugins": [
     {
-      "name": "metta-comercial",
-      "source": "./plugins/metta-comercial",
+      "name": "analise-calls-black",
+      "source": "./plugins/analise-calls-black",
       "description": "Análise das calls de proposta do Programa SMTM para a campanha Black: resumo do lead e mensagens de reabordagem."
     }
   ]

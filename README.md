@@ -22,13 +22,13 @@ O repositório existe para que quem roda a análise:
 ## Como o repositório é organizado
 
 ```
-metta-skills-comercial/
+metta-analise-calls-black/
 ├── README.md                     → este guia
 ├── .gitignore                    → impede que transcrição e resultado subam por engano
 ├── .claude-plugin/
-│   └── marketplace.json          → a "loja" metta-brasil, que aponta para o plugin
+│   └── marketplace.json          → a "loja" metta-black, que aponta para o plugin
 └── plugins/
-    └── metta-comercial/          → o plugin que o time instala
+    └── analise-calls-black/      → o plugin que se instala
         ├── .claude-plugin/
         │   └── plugin.json       → nome e descrição do plugin
         └── skills/
@@ -46,8 +46,8 @@ metta-skills-comercial/
 
 São três camadas:
 
-1. **Marketplace** (`metta-brasil`): o endereço que o time adiciona uma vez no Claude Code.
-2. **Plugin** (`metta-comercial`): o que se instala.
+1. **Marketplace** (`metta-black`): o endereço que o time adiciona uma vez no Claude Code.
+2. **Plugin** (`analise-calls-black`): o que se instala.
 3. **Skill** (`reativacao-black`): a análise das calls para a Black.
 
 ## Instalar (uma vez)
@@ -57,8 +57,8 @@ O computador precisa ter Claude Code, git e Python 3.
 No Claude Code, digite os dois comandos:
 
 ```
-/plugin marketplace add Metta-Brasil/metta-skills-comercial
-/plugin install metta-comercial@metta-brasil
+/plugin marketplace add Metta-Brasil/metta-analise-calls-black
+/plugin install analise-calls-black@metta-black
 ```
 
 Depois, feche e abra o Claude Code.
@@ -66,20 +66,20 @@ Depois, feche e abra o Claude Code.
 Se o primeiro comando der erro de SSH, use o endereço completo:
 
 ```
-/plugin marketplace add https://github.com/Metta-Brasil/metta-skills-comercial.git
+/plugin marketplace add https://github.com/Metta-Brasil/metta-analise-calls-black.git
 ```
 
 ## Receber as atualizações
 
-A condição da Black e as regras da skill são atualizadas neste repositório. Para receber as mudanças automaticamente, ligue a atualização automática: digite `/plugin`, abra a aba **Marketplaces**, escolha **metta-brasil** e selecione **Enable auto-update**.
+A condição da Black e as regras da skill são atualizadas neste repositório. Para receber as mudanças automaticamente, ligue a atualização automática: digite `/plugin`, abra a aba **Marketplaces**, escolha **metta-black** e selecione **Enable auto-update**.
 
 Para atualizar na hora:
 
 ```
-/plugin marketplace update metta-brasil
+/plugin marketplace update metta-black
 ```
 
-## Rodar a reativação Black
+## Rodar a análise das calls
 
 1. Baixe do Drive as anotações do Gemini das calls de proposta: clique com o botão direito na pasta e escolha "Fazer download". A skill lê .docx, .txt e .md, um arquivo por call. Se o lead teve duas calls, inclua as duas.
 2. Crie uma pasta de trabalho, coloque as anotações numa subpasta chamada `transcricoes` e abra o Claude Code na pasta de trabalho.
@@ -101,7 +101,7 @@ O resultado fica em `trabalho/saida/`:
 
 ## Condição da Black
 
-A condição fica em `plugins/metta-comercial/skills/reativacao-black/references/oferta-black.md`. Só o que está como **VALE** entra nas mensagens. As mudanças são feitas pelo marketing, neste repositório, e chegam a todos pela atualização.
+A condição fica em `plugins/analise-calls-black/skills/reativacao-black/references/oferta-black.md`. Só o que está como **VALE** entra nas mensagens. As mudanças são feitas pelo marketing, neste repositório, e chegam a todos pela atualização.
 
 ## Importante
 
