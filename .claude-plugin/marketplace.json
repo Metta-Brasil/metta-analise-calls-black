@@ -1,0 +1,14 @@
+{
+  "name": "metta-brasil",
+  "description": "Skills da Metta para o time comercial",
+  "owner": {
+    "name": "Metta Brasil"
+  },
+  "plugins": [
+    {
+      "name": "metta-comercial",
+      "source": "./plugins/metta-comercial",
+      "description": "Skills do time comercial da Metta. Hoje: reativação Black de leads que já receberam proposta."
+    }
+  ]
+}

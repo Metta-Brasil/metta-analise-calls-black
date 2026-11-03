@@ -1,0 +1,8 @@
+# Repositório público: nada de transcrição, resultado da skill ou dado de lead.
+transcricoes/
+trabalho/
+saida/
+_preparo/
+*.docx
+__pycache__/
+.DS_Store
