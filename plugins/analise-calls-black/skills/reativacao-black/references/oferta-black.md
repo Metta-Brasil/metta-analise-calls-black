@@ -37,4 +37,4 @@ Se estiverem preenchidos (ex.: "terça 10h; quarta 15h"), a mensagem 2 sugere um
 
 ## PDF
 
-A mensagem 2 vai junto com o PDF da Condição Black. A lembrança fica fora dos blocos da mensagem, na seção "Antes de enviar a mensagem 2 (não copiar)", para o Iago não copiar junto.
+A mensagem 2 vai junto com o PDF da Condição Black. A lembrança fica fora do bloco da mensagem, na seção "Antes de enviar a mensagem 2 (não copiar)", para o Iago não copiar junto.

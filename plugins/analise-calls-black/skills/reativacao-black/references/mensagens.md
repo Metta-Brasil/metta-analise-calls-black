@@ -9,7 +9,7 @@ O que separa uma mensagem boa de um follow-up de CRM é um só critério: **o le
 Tirado das mensagens reais que o Iago manda aos leads depois das calls.
 
 - Abre pelo nome e com pergunta curta: "Bom dia, [nome], tudo bem?", "[nome], Iago da Metta aqui!", "Como está?".
-- Manda **vários balões curtos**, um assunto por balão, em vez de um bloco grande.
+- Escreve **parágrafos curtos**, um assunto por parágrafo, separados por linha em branco, numa mensagem só.
 - Trata com proximidade: "mestre" e "meu amigo" com homens, "minha amiga" com mulheres. Use no máximo uma vez por mensagem e só se combinar com o tom da call.
 - Escreve simples, como fala: "pra facilitar", "tranquilo", "te chamo", "conversamos".
 - Sem emoji nas mensagens.
@@ -17,7 +17,7 @@ Tirado das mensagens reais que o Iago manda aos leads depois das calls.
 
 **O que NÃO copiar das mensagens antigas:** pressão, ironia com o lead que sumiu, ataque ao mercado ou à concorrência e "kkk".
 
-**Formato do WhatsApp:** a mensagem sai pronta para copiar e colar, cada balão num bloco de código (no arquivo e no chat), para o asterisco do negrito não sumir na cópia. Negrito com um asterisco de cada lado (`*texto*`), bullets com hífen (`- *texto*`), sem exagero: negrito só nos bullets. Nunca asterisco duplo. Dentro do bloco só vai o que é para enviar; instrução para o Iago ("mande o PDF") fica fora, numa seção separada, para não ser copiada por engano.
+**Formato do WhatsApp:** a mensagem sai pronta para copiar e colar, cada mensagem inteira num bloco de código único (no arquivo e no chat), para o Iago copiar e enviar de uma vez, para o asterisco do negrito não sumir na cópia. Negrito com um asterisco de cada lado (`*texto*`), bullets com hífen (`- *texto*`), sem exagero: negrito só nos bullets. Nunca asterisco duplo. Dentro do bloco só vai o que é para enviar; instrução para o Iago ("mande o PDF") fica fora, numa seção separada, para não ser copiada por engano.
 
 ## Mensagem 1: reconexão
 
@@ -58,7 +58,7 @@ Sem a resposta do lead, a mensagem é escrita para o caso mais comum, em que ele
 
 **Estrutura** (a sequência que o Tiago definiu):
 1. **Abertura curta** que reage à resposta mais comum e diz **há quanto tempo foi a call**, pela data da call e a data de hoje: "Entendi, [nome]. Faz quase dois meses que a gente conversou."
-2. **Cada problema da mensagem 1 ligado ao que o programa faz**, em uma frase cada: "O [problema], a gente resolve com [entrega]." Só com as entregas de `o-que-o-programa-resolve.md`. Dois ou três problemas, no mesmo balão.
+2. **Cada problema da mensagem 1 ligado ao que o programa faz**, em uma frase cada: "O [problema], a gente resolve com [entrega]." Só com as entregas de `o-que-o-programa-resolve.md`. Dois ou três problemas, no mesmo parágrafo.
 3. **A condição de Black:** uma frase de entrada ("E consegui uma condição de Black pra você:") e a lista, em bullets e negrito, com os itens VALE de `oferta-black.md`, na ordem e com o texto de lá. A lista é a mesma dos cards do PDF.
 4. **Sugestão de dia e horário com o Iago:** "Podemos falar [dia] às [hora]?". Se apareceu sócio ou cônjuge na decisão, o convite inclui essa pessoa, pelo nome se ele tiver dito ("com você e com o [nome do sócio]", "com você e a sua esposa").
 5. O PDF da Condição Black vai junto, mas a lembrança fica **fora dos blocos**, na seção "Antes de enviar a mensagem 2 (não copiar)". Nunca dentro da mensagem.

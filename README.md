@@ -94,7 +94,7 @@ O resultado fica em `trabalho/saida/`:
 - um arquivo por lead, com o resumo para o Iago, a mensagem 1, a mensagem 2 e as falas da call usadas como base;
 - `_resumo.md`, com a tabela de todos os leads e o status de cada um.
 
-Cada balão das mensagens vem num bloco de código, já com a formatação do WhatsApp (`*negrito*` e bullets). Copie só o que está dentro do bloco. As instruções, como mandar o PDF junto, ficam fora dos blocos.
+Cada mensagem vem inteira num bloco de código único, já com a formatação do WhatsApp (`*negrito*` e bullets): um clique para copiar, uma mensagem para enviar. Copie só o que está dentro do bloco. As instruções, como mandar o PDF junto, ficam fora dele.
 
 ## Ajustar a mensagem 2 com a resposta do lead
 

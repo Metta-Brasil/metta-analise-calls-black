@@ -56,7 +56,7 @@ No fim, gere `saida/_resumo.md` com uma tabela: lead, empresa, data da call, que
 
 ## Formato do arquivo de cada lead
 
-Cada balão das mensagens vai num bloco de código próprio (três crases antes e depois). Assim o Iago copia o texto cru, com os asteriscos do negrito, e nada que não é mensagem fica junto. Tudo o que é instrução para o Iago fica fora dos blocos, numa seção separada.
+Cada mensagem vai inteira num bloco de código único (três crases antes e depois), com os parágrafos separados por linha em branco. Assim o Iago copia a mensagem de uma vez, com os asteriscos do negrito, e nada que não é mensagem fica junto. Tudo o que é instrução para o Iago fica fora dos blocos, numa seção separada.
 
 ````
 # <Nome> · <Empresa>
@@ -75,33 +75,23 @@ Status: <pronto | REVISAR ANTES DE ENVIAR: motivo>
 ## Mensagem 1 · reconexão
 
 ```
-<balão 1>
-```
+<cumprimento>
 
-```
-<balão 2, com os bullets>
-```
+<meta e desafios, com os bullets>
 
-```
-<balão 3>
+<pergunta>
 ```
 
 ## Mensagem 2 · oferta Black (enviar depois da resposta do lead)
 
 ```
-<balão 1>
-```
+<abertura e tempo desde a call>
 
-```
-<balão 2>
-```
+<cada problema ligado ao que o programa faz>
 
-```
-<balão 3, com a lista da condição>
-```
+<condição de Black, com a lista>
 
-```
-<balão 4: sugestão de dia e horário>
+<sugestão de dia e horário>
 ```
 
 ## Antes de enviar a mensagem 2 (não copiar)
@@ -124,7 +114,7 @@ Um "Problema" a mais para cada bullet além do terceiro.
 
 ## Formato das mensagens (WhatsApp)
 
-- **Sempre em bloco de código**, no arquivo e quando mostrar no chat. Fora do bloco, o chat transforma `*texto*` em itálico e o asterisco some na cópia.
+- **Cada mensagem num bloco de código único**, no arquivo e quando mostrar no chat. Nunca uma mensagem quebrada em vários blocos: o Iago copia uma vez e envia uma vez. Parágrafos separados por linha em branco, dentro do mesmo bloco. Fora do bloco, o chat transforma `*texto*` em itálico e o asterisco some na cópia.
 - **Dentro do bloco só vai o que é para enviar.** Instrução, aviso, "enviar junto", nome da seção: tudo fora do bloco.
 - Negrito com **um** asterisco de cada lado: `*texto*`. Nunca `**texto**`, que aparece no WhatsApp com asterisco sobrando.
 - Bullets com hífen e espaço no começo da linha: `- *texto*`.
@@ -141,8 +131,8 @@ Quando o Iago colar no chat a resposta de um lead à mensagem 1:
    - problema que ele disse que resolveu sai;
    - o resto da estrutura não muda: lista da condição de Black e sugestão de dia e horário.
 3. Se a resposta disser que ele fechou com outra empresa, não quer mais contato ou resolveu tudo, não escreva a oferta: avise o Iago e pare.
-4. Acrescente ao arquivo do lead a seção `## Mensagem 2 · com a resposta do lead`, com a resposta dele citada fora dos blocos e a mensagem nova em blocos, e rode o conferidor.
-5. No chat, mostre a mensagem nova em blocos de código, um por balão, e, fora dos blocos, a lembrança do PDF.
+4. Acrescente ao arquivo do lead a seção `## Mensagem 2 · com a resposta do lead`, com a resposta dele citada fora do bloco e a mensagem nova num bloco único, e rode o conferidor.
+5. No chat, mostre a mensagem nova num bloco de código único e, fora dele, a lembrança do PDF.
 
 Sem resposta do lead, a mensagem 2 sai no padrão, escrita para o caso mais comum (os desafios continuam).
 

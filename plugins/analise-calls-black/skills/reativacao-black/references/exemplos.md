@@ -40,17 +40,13 @@ Status: pronto
 
 ```
 Fala, Otávio, tudo bem?
-```
 
-```
 Da última vez que a gente conversou, você queria levar a loja a R$ 900 mil por mês, mas para chegar lá tinha alguns desafios:
 
 - *toda venda grande, de obra e construtora, caindo na sua mão*
 - *a maior parte do time vendendo bem abaixo do melhor vendedor*
 - *três anos sem conseguir tirar férias*
-```
 
-```
 Como estão essas coisas aí hoje?
 ```
 
@@ -58,13 +54,9 @@ Como estão essas coisas aí hoje?
 
 ```
 Entendi, Otávio. Faz quase dois meses que a gente conversou.
-```
 
-```
 As vendas grandes, a gente resolve com o método: o seu jeito de fechar vira o método da loja, e o time aprende a vender por ele. A distância para o melhor vendedor, com treinamento ao vivo do time todo mês e a formação do seu gestor.
-```
 
-```
 E consegui uma condição de Black pra você:
 
 - *Condição muito mais barata* do que a que eu te passei
@@ -73,9 +65,7 @@ E consegui uma condição de Black pra você:
 - *Masterclass de planejamento estratégico 2027*, em janeiro, para bater meta mesmo com a escala 5x2, a NR-1 e a inflação
 - *Construção do seu método comercial*, com o construtor da Metta
 - *Kit de livros*, conforme estoque
-```
 
-```
 Podemos falar com você e com a Lúcia [dia] às [hora]?
 ```
 
@@ -109,17 +99,11 @@ Resposta do lead: "Tudo bem! As vendas grandes continuam comigo, mas contratei u
 
 ```
 Que bom que chegou o gerente, Otávio. Faz quase dois meses que a gente conversou.
-```
 
-```
 As vendas grandes, a gente resolve com o método: o seu jeito de fechar vira o método da loja, e o time aprende a vender por ele. E o gerente novo entra com a formação mensal ao vivo, para aumentar a performance dos vendedores desde o começo.
-```
 
-```
 (a mesma lista da condição de Black)
-```
 
-```
 Podemos falar com você e com a Lúcia [dia] às [hora]?
 ```
 ````
@@ -129,7 +113,7 @@ A abertura reage à resposta, o gerente novo vira um "a gente resolve com" e a l
 ## Por que essas mensagens funcionam
 
 - **Mensagem 1:** a abertura usa a meta dele, com o número que ele disse. Os três bullets são dele: um desafio de operação (as vendas grandes), um do time (a distância para o melhor vendedor) e um emocional (as férias). Nenhum culpa o dono. Não fala de oferta.
-- **Mensagem 2:** diz há quanto tempo foi a call e liga cada problema a uma entrega do programa. O método responde também à objeção dele (o curso que não ficou): é o jeito de vender da loja, não um conteúdo pronto. A lista é a dos itens VALE, na ordem do arquivo da oferta. O convite inclui a Lúcia. Não tem preço, percentual, prazo nem emoji. Cada balão está num bloco, e a lembrança do PDF fica fora deles.
+- **Mensagem 2:** diz há quanto tempo foi a call e liga cada problema a uma entrega do programa. O método responde também à objeção dele (o curso que não ficou): é o jeito de vender da loja, não um conteúdo pronto. A lista é a dos itens VALE, na ordem do arquivo da oferta. O convite inclui a Lúcia. Não tem preço, percentual, prazo nem emoji. Cada mensagem está inteira num bloco só, e a lembrança do PDF fica fora dele.
 
 ## As mesmas mensagens, mal escritas
 

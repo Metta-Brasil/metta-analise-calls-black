@@ -12,7 +12,7 @@ Para cada <lead>.md da pasta (menos os que começam com "_"):
   - formato do WhatsApp: *negrito* com um asterisco; asterisco duplo é erro;
   - nada de preço, percentual, prazo, urgência, palavra proibida ou travessão nos balões;
   - "mentoria"/"consultoria" fora das mensagens;
-  - cada balão num bloco de código (``` ... ```), sem instrução para o Iago dentro do bloco, sem emoji;
+  - cada mensagem num bloco de código único (``` ... ```), sem instrução para o Iago dentro do bloco, sem emoji;
   - mensagem 2 termina com a sugestão de horário; lembrança do PDF fora dos blocos;
   - "Mensagem 2 · com a resposta do lead", se existir, passa pelas mesmas regras;
   - mensagem 1 usa pelo menos uma palavra das falas do lead (sinal de que não está genérica).
@@ -72,7 +72,7 @@ EMOJI = re.compile("[\U0001F000-\U0001FAFF\u2600-\u27BF\uFE0F]")
 
 
 def blocos(txt: str):
-    """Conteúdo de cada bloco de código (um balão por bloco)."""
+    """Conteúdo de cada bloco de código (cada mensagem tem que estar num bloco só)."""
     return [b.strip("\n") for b in re.findall(r"^```[^\n]*\n(.*?)^```\s*$", txt, re.M | re.S)]
 
 
@@ -153,7 +153,9 @@ def conferir_arquivo(p: Path):
                 erros.append(f"{nome}: seção não encontrada")
             continue
         if not blocos(txt):
-            erros.append(f"{nome}: os balões não estão em blocos de código: na cópia, o chat apaga os asteriscos e mistura instrução com mensagem")
+            erros.append(f"{nome}: a mensagem não está em bloco de código: na cópia, o chat apaga os asteriscos e mistura instrução com mensagem")
+        elif len(blocos(txt)) > 1:
+            erros.append(f"{nome}: a mensagem está em {len(blocos(txt))} blocos; tem que ser um bloco só, para o Iago copiar e enviar de uma vez")
         for bl in blocos(txt):
             if re.search(r"enviar junto|n[aã]o copiar|se o lead responder|cole a resposta|\bPDF\b", bl, re.I):
                 erros.append(f"{nome}: instrução para o Iago dentro do bloco da mensagem: \"{bl.strip()[:60]}\"")
@@ -203,7 +205,7 @@ def conferir_arquivo(p: Path):
         if nome.startswith("mensagem 2"):
             ultimo = [x for x in b.split("\n\n") if x.strip()][-1] if b.strip() else ""
             if "?" not in ultimo or not re.search(r"apresent|convers|mostrar|falar", norm(ultimo)):
-                avisos.append("mensagem 2: o último balão não é a sugestão de dia e horário")
+                avisos.append("mensagem 2: o último parágrafo não é a sugestão de dia e horário")
             antes = achar(secs, "antes de enviar a mensagem 2") or ""
             if nome == "mensagem 2" and "PDF" not in antes:
                 avisos.append("mensagem 2: falta a seção 'Antes de enviar a mensagem 2 (não copiar)' com a lembrança do PDF")
