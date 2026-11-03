@@ -1,20 +1,23 @@
-# Skills do time comercial da Metta
+# Análise de calls para a Black · Metta
 
 ## Para que serve este repositório
 
-Este repositório reúne, num lugar só, as skills do Claude Code que o time comercial da Metta usa.
+Este repositório tem uma função só: analisar as calls de proposta do Programa SMTM para a campanha Black.
 
-Uma skill é um pacote de instruções, referências e scripts que ensina o Claude a fazer uma tarefa específica do jeito da Metta. Sem a skill, cada pessoa escreve o próprio pedido e o resultado muda de uma vez para outra. Com a skill, o critério fica dentro dela: como ler uma call, qual é a voz do closer, o que pode e o que não pode entrar numa mensagem e como conferir o resultado antes de entregar.
+A skill lê a transcrição da call de cada lead que recebeu proposta e não fechou. Para cada um, ela entrega ao Iago:
 
-O repositório existe para três coisas:
+- um resumo do lead: quem é, o que queria, o que travou e o que foi oferecido;
+- a mensagem 1 de WhatsApp, de reconexão, que retoma o desafio que o lead contou na call;
+- a mensagem 2, com a condição da Black ligada ao problema dele e o convite para uma conversa.
 
-- **Instalar uma vez:** cada pessoa do time instala uma vez e passa a ter todas as skills do comercial no Claude Code.
-- **Todos com a mesma versão:** quando uma regra muda, como a condição da Black, a mudança é feita aqui e chega a todo o time pela atualização. Ninguém trabalha com arquivo antigo.
-- **Crescer sem reinstalar:** uma skill nova entra no repositório e aparece para o time na próxima atualização.
+A skill só escreve. Quem envia é o Iago.
 
-## Skills disponíveis
+Uma skill é um pacote de instruções, referências e scripts que ensina o Claude a fazer uma tarefa do jeito da Metta. Aqui, o critério fica dentro dela: como ler a call, qual é a voz do Iago, o que pode e o que não pode entrar na mensagem e como conferir o resultado antes de entregar.
 
-- **reativacao-black:** lê as transcrições das calls de proposta do Programa SMTM e, para cada lead que não fechou, entrega um resumo para o Iago e duas mensagens de WhatsApp: a de reconexão e a da oferta Black. A skill só escreve. Quem envia é o Iago.
+O repositório existe para que quem roda a análise:
+
+- **instale uma vez** no Claude Code;
+- **use sempre a mesma versão:** quando a condição da Black muda, a mudança é feita aqui e chega a todos pela atualização.
 
 ## Como o repositório é organizado
 
@@ -23,7 +26,7 @@ metta-skills-comercial/
 ├── README.md                     → este guia
 ├── .gitignore                    → impede que transcrição e resultado subam por engano
 ├── .claude-plugin/
-│   └── marketplace.json          → a "loja" metta-brasil, que lista os plugins
+│   └── marketplace.json          → a "loja" metta-brasil, que aponta para o plugin
 └── plugins/
     └── metta-comercial/          → o plugin que o time instala
         ├── .claude-plugin/
@@ -44,8 +47,8 @@ metta-skills-comercial/
 São três camadas:
 
 1. **Marketplace** (`metta-brasil`): o endereço que o time adiciona uma vez no Claude Code.
-2. **Plugin** (`metta-comercial`): o que o time instala. Ele carrega todas as skills do comercial.
-3. **Skills:** cada uma numa pasta dentro de `skills/`. Uma skill nova entra como outra pasta ao lado de `reativacao-black/`.
+2. **Plugin** (`metta-comercial`): o que se instala.
+3. **Skill** (`reativacao-black`): a análise das calls para a Black.
 
 ## Instalar (uma vez)
 
