@@ -1,8 +1,51 @@
 # Skills do time comercial da Metta
 
-Skills para o Claude Code. Hoje tem uma:
+## Para que serve este repositório
+
+Este repositório reúne, num lugar só, as skills do Claude Code que o time comercial da Metta usa.
+
+Uma skill é um pacote de instruções, referências e scripts que ensina o Claude a fazer uma tarefa específica do jeito da Metta. Sem a skill, cada pessoa escreve o próprio pedido e o resultado muda de uma vez para outra. Com a skill, o critério fica dentro dela: como ler uma call, qual é a voz do closer, o que pode e o que não pode entrar numa mensagem e como conferir o resultado antes de entregar.
+
+O repositório existe para três coisas:
+
+- **Instalar uma vez:** cada pessoa do time instala uma vez e passa a ter todas as skills do comercial no Claude Code.
+- **Todos com a mesma versão:** quando uma regra muda, como a condição da Black, a mudança é feita aqui e chega a todo o time pela atualização. Ninguém trabalha com arquivo antigo.
+- **Crescer sem reinstalar:** uma skill nova entra no repositório e aparece para o time na próxima atualização.
+
+## Skills disponíveis
 
 - **reativacao-black:** lê as transcrições das calls de proposta do Programa SMTM e, para cada lead que não fechou, entrega um resumo para o Iago e duas mensagens de WhatsApp: a de reconexão e a da oferta Black. A skill só escreve. Quem envia é o Iago.
+
+## Como o repositório é organizado
+
+```
+metta-skills-comercial/
+├── README.md                     → este guia
+├── .gitignore                    → impede que transcrição e resultado subam por engano
+├── .claude-plugin/
+│   └── marketplace.json          → a "loja" metta-brasil, que lista os plugins
+└── plugins/
+    └── metta-comercial/          → o plugin que o time instala
+        ├── .claude-plugin/
+        │   └── plugin.json       → nome e descrição do plugin
+        └── skills/
+            └── reativacao-black/ → a skill
+                ├── SKILL.md      → passo a passo que o Claude segue
+                ├── references/
+                │   ├── leitura-da-call.md  → como ler a call e montar a ficha do lead
+                │   ├── mensagens.md        → voz do Iago, regras da mensagem 1 e da 2
+                │   ├── oferta-black.md     → condição da Black (só o que está VALE entra)
+                │   └── exemplos.md         → exemplo completo fictício, bom e ruim
+                └── scripts/
+                    ├── preparar.py  → limpa e indexa as transcrições
+                    └── conferir.py  → confere as mensagens antes de entregar
+```
+
+São três camadas:
+
+1. **Marketplace** (`metta-brasil`): o endereço que o time adiciona uma vez no Claude Code.
+2. **Plugin** (`metta-comercial`): o que o time instala. Ele carrega todas as skills do comercial.
+3. **Skills:** cada uma numa pasta dentro de `skills/`. Uma skill nova entra como outra pasta ao lado de `reativacao-black/`.
 
 ## Instalar (uma vez)
 
